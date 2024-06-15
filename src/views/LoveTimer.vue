@@ -1,5 +1,7 @@
 <template>
-  <div class="h-full flex flex-col justify-center items-center max-w-[500px] mx-auto">
+  <div
+    class="flex flex-col justify-center items-center max-w-[500px] mx-auto px-[20px] max-h-screen"
+  >
     <div class="text-center">
       <p class="text-[20px] relative bottom-[-30px]">Days left:</p>
       <p class="text-[120px]">{{ timeLeft.wholeDays }}</p>
@@ -23,26 +25,30 @@
         </div>
       </div>
     </div>
-    <div class="timer">
-      <div class="time-unit flex flex-col justify-center">
-        <p>{{ timeLeft.months }}</p>
-        <p>Month</p>
+    <div class="timer flex flex-col sm:flex-row items-center gap-[15px] sm:gap-0">
+      <div class="flex">
+        <div class="time-unit flex flex-col justify-center text-2xl">
+          <p>{{ timeLeft.months }}</p>
+          <p>Month</p>
+        </div>
+        <div class="time-unit flex flex-col justify-center text-2xl">
+          <p>{{ timeLeft.days }}</p>
+          <p>Days</p>
+        </div>
       </div>
-      <div class="time-unit flex flex-col justify-center">
-        <p>{{ timeLeft.days }}</p>
-        <p>Days</p>
-      </div>
-      <div class="time-unit flex flex-col justify-center">
-        <p>{{ timeLeft.hours }}</p>
-        <p>Hours</p>
-      </div>
-      <div class="time-unit flex flex-col justify-center">
-        <p>{{ timeLeft.minutes }}</p>
-        <p>Minutes</p>
-      </div>
-      <div class="time-unit flex flex-col justify-center">
-        <p>{{ timeLeft.seconds }}</p>
-        <p>Seconds</p>
+      <div class="flex">
+        <div class="time-unit flex flex-col justify-center text-2xl">
+          <p>{{ timeLeft.hours }}</p>
+          <p>Hours</p>
+        </div>
+        <div class="time-unit flex flex-col justify-center text-2xl">
+          <p>{{ timeLeft.minutes }}</p>
+          <p>Minutes</p>
+        </div>
+        <div class="time-unit flex flex-col justify-center text-2xl">
+          <p>{{ timeLeft.seconds }}</p>
+          <p>Seconds</p>
+        </div>
       </div>
     </div>
   </div>
@@ -121,9 +127,6 @@ onUnmounted(() => {
 
 <style scoped>
 .timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 2rem;
   color: black;
   background-color: white;
